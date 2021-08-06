@@ -1,0 +1,30 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    flex: 2;
+}
+
+.col-ghost{
+    height:100%;
+    width: 5%;
+}
+
+
+.col-menu{
+    border: 1px solid black;
+    height:100%;
+    width: 5%;
+    position:fixed
+
+
+}
+.col-conteudo{
+    border: 1px solid green;
+    margin-left: 0.09%;
+    width:95%;
+    height: 99.8vh;
+
+}
