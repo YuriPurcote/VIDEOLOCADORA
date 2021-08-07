@@ -10,9 +10,15 @@
 </head>
 <script language='javascript' type="text/javascript">
 	function login(){
-					
-		document.form.action = "logincliente.php?do=action=login";
-        return true;
+		chave = document.getElementById("chave");
+		senha = document.getElementById("senha");			
+		if(chave.value == "123")
+		{
+            if(senha.value == "123")
+            {
+                document.form.action = "loginCliente.php?do=login&action=login";
+            }
+		}
 	}
 </script>
 <body>
@@ -30,17 +36,18 @@
             Login
         </div>
         <div class="subtitulo">
-            nao há necessidade de preencher os campos para realizar o login
+            ambos campos 123
         </div>
         <div class="campos">
-            <form onsubmit="return login()" method="post">
+            <form action="loginCliente.php?do=login&action=login" >
                 <label for="fname">ID:</label>
-                <input class="login" type="text" id="fname" name="fname"><br><br>
+                <input class="login" type="text" id="chave" name="fname"><br><br>
                 <label for="lname">Senha:</label>
-                <input class="login"type="text" id="lname" name="lname"><br><br>
+                <input class="login"type="text" id="senha" name="lname"><br><br>
                 <input class="btnLogin" type="submit" value="Login">
             </form>
         </div>
+
     </div>
 </body>
 </html>
