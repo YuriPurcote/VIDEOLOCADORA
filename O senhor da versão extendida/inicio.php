@@ -14,15 +14,15 @@
 <!-- coluna esquerda do menu -->
     <div class="col-menu">
         <div class="inicio">
-            <a href="inicio.html"><img src="imagens/logoGuia.png" alt=""></a>
+            <a href="inicio.php"><img src="imagens/logoGuia.png" alt=""></a>
         </div>
-        <a href="pesquisa.html" class="pesquisa bloco fonte">
+        <a href="pesquisa.php" class="pesquisa bloco fonte">
             <h4>P</h4>esquisa
         </a >
         <a href="#creditos" class="creditos bloco fonte">
             <h4>C</h4>reditos
         </a >
-        <a href="login.html" class="creditos bloco fonte areaFuncionario">
+        <a href="login.php" class="creditos bloco fonte areaFuncionario">
             <h4>F</h4>uncionario
         </a >
     </div>

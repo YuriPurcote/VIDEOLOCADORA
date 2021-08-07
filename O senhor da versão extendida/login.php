@@ -1,3 +1,5 @@
+<?php include("conexao.php")?>
+
 <!DOCTYPE html>
 <html lang="pt-br">
 <head>
@@ -8,26 +10,14 @@
     <link rel="stylesheet" href="css/estilosPrincipais.css">
     <title>O Senhor da Versão Extendida</title>
 </head>
-<script language='javascript' type="text/javascript">
-	function login(){
-		chave = document.getElementById("chave");
-		senha = document.getElementById("senha");			
-		if(chave.value == "123")
-		{
-            if(senha.value == "123")
-            {
-                document.form.action = "loginCliente.php?do=login&action=login";
-            }
-		}
-	}
-</script>
+
 <body>
 <!-- coluna fantasma -->
     <div class="col-ghost"></div>
 <!-- coluna esquerda do menu -->
     <div class="col-menu">
         <div class="inicio">
-            <a href="inicio.html"><img src="imagens/logoGuia.png" alt=""></a>
+            <a href="inicio.php"><img src="imagens/logoGuia.png" alt=""></a>
         </div>
     </div>
 <!-- coluna de conteudos -->
@@ -36,18 +26,17 @@
             Login
         </div>
         <div class="subtitulo">
-            ambos campos 123
+            não a necessidade de colocar quaisquer conteudo nos campos,apenas clicle em login
         </div>
         <div class="campos">
-            <form action="loginCliente.php?do=login&action=login" >
-                <label for="fname">ID:</label>
-                <input class="login" type="text" id="chave" name="fname"><br><br>
-                <label for="lname">Senha:</label>
-                <input class="login"type="text" id="senha" name="lname"><br><br>
+            <form action="cliente.php" >
+                <label for="id">ID:</label>
+                <input class="login" type="text" id="chave" name="id"><br><br>
+                <label for="senha">Senha:</label>
+                <input class="login"type="text" id="senha" name="senha"><br><br>
                 <input class="btnLogin" type="submit" value="Login">
             </form>
         </div>
-
     </div>
 </body>
 </html>

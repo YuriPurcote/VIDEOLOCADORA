@@ -1,3 +1,6 @@
+<?php include("conexao.php")?>
+
+
 <!DOCTYPE html>
 <html lang="pt-br">
 
@@ -14,9 +17,12 @@
         Video locadora
     </div>
     <div class="nomeDaEmpresa ">
-       <h1> O senhor da Versão Extendida</h1>
+        <h1> O senhor da Versão Extendida</h1>
     </div>
-    <a href="inicio.html">
+    <div class="empresa ">
+        Onde a historia nao acaba com o filme
+    </div>
+    <a href="inicio.php">
         Nossos Titulos
     </a>
 </body>

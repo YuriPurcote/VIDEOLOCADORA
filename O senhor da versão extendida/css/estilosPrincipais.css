@@ -87,7 +87,9 @@ a{
 .titulo{
     color: #fff;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
-    font-size: 18vh;
+    font-size: 10vh;
+    border-bottom: 1px solid #c6520e;
+    margin-bottom: 1vh;
 }
 .subtitulo{
     color: #fff;
@@ -146,9 +148,10 @@ form{
     border-left: none;
     border-top: none;
     color: #f4f0e6;
+    text-transform: uppercase;
 }
 .btnLogin{
-    width: 10vh;
+    width: 15vh;
     height: 5vh;
     background-color: #c6520e;
     border: none;
@@ -159,4 +162,36 @@ form{
 .btnLogin:hover{
     background-color: #c6520e;
 
+}
+.red{
+    color: #ff5e00;
+}
+.red:hover{
+    color: #ff843c;
+}
+/********************************** TABELA*********************/
+tr{
+    text-align: center;
+}
+table{
+    margin-top:5vh;
+    margin-left: 20vh;
+    width: 100vh;
+    border-collapse: collapse;
+
+}
+tr{
+    height: 2vh;
+    width: 100vh;
+    
+    color: #707270 ;
+    font-size: 2vh;
+    padding: 1vh;
+
+    
+}
+td{
+    border-bottom: 0.1vh solid #c6520e;
+    padding-left: 0;
+    margin-left: 0;
 }
