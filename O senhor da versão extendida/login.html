@@ -8,39 +8,38 @@
     <link rel="stylesheet" href="css/estilosPrincipais.css">
     <title>O Senhor da Versão Extendida</title>
 </head>
+<script language='javascript' type="text/javascript">
+	function login(){
+					
+		document.form.action = "logincliente.php?do=action=login";
+        return true;
+	}
+</script>
 <body>
 <!-- coluna fantasma -->
     <div class="col-ghost"></div>
 <!-- coluna esquerda do menu -->
     <div class="col-menu">
         <div class="inicio">
-            <a href="#novidades"><img src="imagens/logoGuia.png" alt=""></a>
+            <a href="inicio.html"><img src="imagens/logoGuia.png" alt=""></a>
         </div>
-        <a href="pesquisa.html" class="pesquisa bloco fonte">
-            <h4>P</h4>esquisa
-        </a >
-        <a href="#creditos" class="creditos bloco fonte">
-            <h4>C</h4>reditos
-        </a >
-        <a href="login.html" class="creditos bloco fonte areaFuncionario">
-            <h4>F</h4>uncionario
-        </a >
     </div>
 <!-- coluna de conteudos -->
     <div class="col-conteudo ">
         <div class="titulo">
-            Novidades
+            Login
         </div>
-        <div class="monstruario">
-            <div class="blocoCapa">
-                <img src="imagens/asociedadedoanel.jpg" alt="" width="200vh">
-            </div>
-            <div class="blocoCapa">
-                <img src="imagens/asduastorres.jpg" alt="" width="177vh">
-            </div>
-            <div class="blocoCapa">
-                <img src="imagens/oretornodorei.jpg" alt="" width="169vh">
-            </div>
+        <div class="subtitulo">
+            nao há necessidade de preencher os campos para realizar o login
+        </div>
+        <div class="campos">
+            <form onsubmit="return login()" method="post">
+                <label for="fname">ID:</label>
+                <input class="login" type="text" id="fname" name="fname"><br><br>
+                <label for="lname">Senha:</label>
+                <input class="login"type="text" id="lname" name="lname"><br><br>
+                <input class="btnLogin" type="submit" value="Login">
+            </form>
         </div>
     </div>
 </body>

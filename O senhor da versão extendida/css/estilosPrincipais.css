@@ -42,7 +42,7 @@ body{
     margin-left: 0.09%;
     width:95%;
     height: 96vh;
-    background-color: #585858
+    background-color: #262626
     ;
     padding: 1%;
 }
@@ -60,13 +60,13 @@ h4{
 /***************BASE DOS ICONES DO MENU****/
 .bloco{
     margin-bottom:10% ;
-    background-color: #623923;
+    background-color: #c6520e;
     width: 100%;
     height: 2.5%;
     padding-left: 0.5vh;
 }
 .fonte{
-    font-size: 80%;
+    font-size: 1.5vh;
     display: flex;
     justify-content: center; 
     align-items: center; 
@@ -78,23 +78,32 @@ a{
     transition: 0.4s;
 }
 .bloco:hover{
-    background-color: #8d6229;
+    font-size: 2vh;
+    background-color: #ff5e00;
     transition: 0.4s;
     color: #f4f0e6;
 }
 /***********************COL DE CONTEUDO  */
 .titulo{
-    color: #2b2b2b;
+    color: #fff;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 18vh;
 }
+.subtitulo{
+    color: #fff;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    text-transform: overline ;
+    font-size: 2vh;
+
+}
+
 .blocoCapa{
     display: inline;
     margin-right: 1%;
 }
 /* creditos */
 .msgDeIndisponivel{
-    color: #2b2b2b;
+    color: #fff;
     font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
     font-size: 5vh;
     text-decoration: underline;
@@ -119,4 +128,35 @@ a{
 /***************FUNCIONARIO*/
 .areaFuncionario{
     margin-top: 60vh;
+}
+.campos{
+    margin-left: 20vh;
+    margin-top: 10vh;
+    color: #fff;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+}
+form{
+    font-size: 4vh;
+}
+.login{
+    font-size: 3vh;
+    background-color:#262626;
+    border-bottom: 3px solid #c6520e;
+    border-right: none;
+    border-left: none;
+    border-top: none;
+    color: #f4f0e6;
+}
+.btnLogin{
+    width: 10vh;
+    height: 5vh;
+    background-color: #c6520e;
+    border: none;
+    color: #f4f0e6;
+    font-size:70%;
+    transition: 0.4s;
+}
+.btnLogin:hover{
+    background-color: #c6520e;
+
 }
