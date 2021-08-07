@@ -46,16 +46,15 @@
         </div>
         <div class="campos-edicao">
             <?php 
-                var_dump($result);
             if(@$itens = mysqli_fetch_assoc($result)):
             ?>
                 <div class="campos">
-                    <form method="POST" action="editar.php">
-                        <input id="id"          name="id"   type="hidden"  value="<?= $itens['id'] ?> " >
-                        <input class="login" type="text"   maxlength="25" name="nome"  placeholder="Nome " value="<?= $itens['nome'] ?> ">        
-                        <input class="login" type="number" maxlength="12"  name="numero" placeholder="Numero" value="<?= $itens['cpf']?> ">        
-                        <input class="login" type="number"   maxlength="11"  name="cpf"  placeholder="Cpf" value="<?= $itens['numero'] ?> ">        
-                        <button  class="btnLogin" type="submit">Alterar</button>
+                    <form method="POST" >
+                        <input id="id" name="id"   type="hidden"  value="<?= $itens['id'] ?> " >
+                        <input class="login" type="text"  maxlength="25" name="nome"  placeholder="Nome " value="<?= $itens['nome'] ?> ">        
+                        <input class="login" type="text"  maxlength="25" name="CPF"  placeholder="CPF " value="<?= $itens['CPF'] ?> ">        
+                        <input class="login" type="text"  maxlength="25" name="numero"  placeholder="Numero " value="<?= $itens['numero'] ?> ">        
+                        <button action="editar.php" class="btnLogin" type="submit">Alterar</button>
                     </form>
                 </div>
             <?php endif;?>
@@ -64,19 +63,19 @@
 </body>
 <?php       
 
+
     @$new_id  = $_POST["id"];
-    @$new_nome  = $_POST["new_nome"];
-    @$new_numero = $_POST["new_numero"];
-    @$new_cpf  = $_POST["new_cpf"];
+    @$new_nome  = $_POST["nome"];
+    @$new_numero = $_POST["numero"];
+    @$new_cpf  = $_POST["CPF"];
 
-    $query = "UPDATE tb_pessoas SET
-        pes_nome='" .$new_nome. "',
-        pes_numero='" .$new_numero. "',
-        pes_cpf='" .$new_cpf. "' 
-        WHERE id_pessoas = $new_id  ";
+    $sql = "UPDATE clientes SET
+        nome='" .$new_nome. "',
+        numero='" .$new_numero. "',
+        cpf='" .$new_cpf. "' 
+        WHERE id = $new_id  ";
 
-    
-    if (@$selecao = mysqli_fetch_assoc($sql) ) {
+    if (@$selecao = mysqli_query($mysqli, $sql) ) {
         header("Location:cliente.php?msg=Cliente Alterado com sucesso!");
     }
 ?>

@@ -56,9 +56,9 @@
         </div>
         <div class="campos">
             <form method="POST" action="acoes.php?acao=incluir">
-                <input class="login" type="text"   maxlength="25" name="nome"  placeholder="Nome">        
-                <input class="login" type="number" maxlength="12"  name="numero" placeholder="Numero">        
-                <input class="login" type="number"   maxlength="11"  name="cpf"  placeholder="Cpf">        
+                <input class="login" type="text"    name="nome"  placeholder="Nome">        
+                <input class="login" type="text"    name="cpf"  placeholder="Cpf">        
+                <input class="login" type="text"  name="numero" placeholder="Numero">        
                 <button  class="btnLogin" type="submit">Incluir</button>
             </form>
         </div>
@@ -71,11 +71,11 @@
                     <td class="td-nome">
                         Nome
                     </td>
-                    <td class="td-idade">
-                        Numero
-                    </td>
                     <td class="td-sexo">
                         Cpf
+                    </td>
+                    <td class="td-idade">
+                        Numero
                     </td>
                     <td class="td-acao">
                         Ação
@@ -90,14 +90,13 @@
                             <?php echo $row['nome'];?>
                         </td>
                         <td class="">
-                            <?php echo $row['numero'];?>
+                            <?php echo $row['CPF'];?>
                         </td>
                         <td class="">
-                            <?php echo $row['CPF'];?>
+                            <?php echo $row['numero'];?>
                         </td>
                         <td class="td-acao-corpo">
                             <a class="fas fa-pen-nib botao-acao-lista red" href="editar.php?id=<?= $row['id'];?>" title="Alterar"></a>
-                            <a class="fas fa-eraser botao-acao-lista red" href="deletar.php?id=<?= $row['id'];?>" title="Apagar" ></a>
                         </td>
                     </tr>
                 <?php endwhile; ?>  

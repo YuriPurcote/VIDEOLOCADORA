@@ -1,7 +1,7 @@
 <?php
 include 'conexao.php';
 require_once 'objcliente.php';
-$cliente = new cliente();
+$cliente = new Cliente();
 
     @$acao = isset($_GET['acao']) ? $_GET['acao'] : $acao;
         /* incluir completo */
@@ -14,8 +14,6 @@ $cliente = new cliente();
             $nome = $cliente ->getNome($_POST['nome']);
             $numero = $cliente ->getNumero($_POST['numero']);
             $cpf = $cliente ->getCpf($_POST['cpf']);
-            $i=1;
-            $id= $i++;
             if ($cliente == NULL ) {
 
                 header("Location:cliente.php?msg=Favor preencher todos os campos");
@@ -23,7 +21,7 @@ $cliente = new cliente();
                 $sql = "INSERT INTO clientes(
                         nome,
                         numero,
-                        cpf
+                        CPF
                     )values(
                     ' $nome',
                         $numero,
@@ -35,5 +33,5 @@ $cliente = new cliente();
                 } else {
                     echo "Error: " . $sql . "<br>" . mysqli_error($mysqli);
                 }
-            }}
-            
+            }
+        }
