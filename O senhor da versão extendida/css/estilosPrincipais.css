@@ -1,0 +1,91 @@
+/* fonte  */
+@font-face {
+    font-family:"ring";
+    src: url("../fontes/RINGM___.TTF");
+
+}
+
+/* geral */
+*{
+    margin: 0;
+    padding: 0;
+}
+body{
+    display: flex;
+    flex: 2;
+}
+
+.col-ghost{
+    height:100%;
+    width: 5%;
+}
+
+
+.col-menu{
+    border: 1px solid black;
+    height:100%;
+    width: 5%;
+    position:fixed;
+    background-color: #000;
+    transition: 0.5s;
+
+}
+.col-menu:hover{
+    width: 10%;
+    font-size: 3vh;
+    transition: 0.5s;
+}
+.col-menu:hover>a{
+    height:3.5%;
+}
+.col-conteudo{
+    margin-left: 0.09%;
+    width:95%;
+    height: 96vh;
+    background-color: #585858
+    ;
+    padding: 1%;
+}
+/* configuração de iniciales */
+h4{
+    font-family: "ring";
+    text-align: center;
+
+}
+
+/***************PRIMEIRO ICONE DO MENU****/
+.inicio>a>img{
+    width: 100%;
+}
+/***************BASE DOS ICONES DO MENU****/
+.bloco{
+    margin-bottom:10% ;
+    background-color: #623923;
+    width: 100%;
+    height: 2.5%;
+    padding-left: 0.5vh;
+}
+.fonte{
+    font-size: 100%;
+}
+a{
+    display: inline-flex;
+    text-decoration: none;  
+    color: #000;
+    transition: 0.4s;
+}
+.bloco:hover{
+    background-color: #8d6229;
+    transition: 0.4s;
+    color: #f4f0e6;
+}
+/***********************COL DE CONTEUDO  */
+.titulo{
+    color: #2b2b2b;
+    font-family: Cambria, Cochin, Georgia, Times, 'Times New Roman', serif;
+    font-size: 18vh;
+}
+.blocoCapa{
+    display: inline;
+    margin-right: 1%;
+}
