@@ -36,8 +36,8 @@
         <a href="cliente.php" class="creditos bloco fonte">
             <h4>C</h4>liente
         </a >
-        <a href="pesquisa.php" class="pesquisa bloco fonte">
-            <h4>P</h4>esquisa
+        <a href="titulo.php" class="pesquisa bloco fonte">
+            <h4>T</h4>itulo
         </a >
         <a href="login.php" class="creditos bloco fonte areaFuncionario">
             <h4>F</h4>uncionario
@@ -57,7 +57,7 @@
         <div class="campos">
             <form method="POST" action="acoes.php?acao=incluir">
                 <input class="login" type="text"    name="nome"  placeholder="Nome">        
-                <input class="login" type="text"    name="cpf"  placeholder="Cpf">        
+                <input class="login" type="text" maxlength="12"   name="cpf"  placeholder="Cpf">        
                 <input class="login" type="text"  name="numero" placeholder="Numero">        
                 <button  class="btnLogin" type="submit">Incluir</button>
             </form>
@@ -97,6 +97,7 @@
                         </td>
                         <td class="td-acao-corpo">
                             <a class="fas fa-pen-nib botao-acao-lista red" href="editar.php?id=<?= $row['id'];?>" title="Alterar"></a>
+                            <a class="fas fa-eraser botao-acao-lista red" href="deletar.php?id=<?= $row['id'];?>" title="Apagar" ></a>
                         </td>
                     </tr>
                 <?php endwhile; ?>  

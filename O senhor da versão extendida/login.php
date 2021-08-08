@@ -17,7 +17,7 @@
 <!-- coluna esquerda do menu -->
     <div class="col-menu">
         <div class="inicio">
-            <a href="inicio.php"><img src="imagens/logoGuia.png" alt=""></a>
+            <a href="Interface do Usuario/inicio.php"><img src="imagens/logoGuia.png" alt=""></a>
         </div>
     </div>
 <!-- coluna de conteudos -->

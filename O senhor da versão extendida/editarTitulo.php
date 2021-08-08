@@ -14,7 +14,7 @@
 <?php
   @$id= $_GET["id"] ;
   
-  $query = "SELECT * FROM clientes WHERE id = $id ";
+  $query = "SELECT * FROM titulos WHERE id = $id ";
   
   @$result = mysqli_query($mysqli,$query);
 
@@ -37,10 +37,10 @@
     </div>
     <div class="col-conteudo ">
         <div class="titulo">
-            Cliente
+            Titulo
         </div>
         <div class="subtitulo">
-            Cadastro de Clientes
+            Edição de Titulo
         </div>
         <div class="subtitulo red">
             <?php  echo @$_GET["msg"] ?>
@@ -52,10 +52,10 @@
                 <div class="campos">
                     <form method="POST" >
                         <input id="id" name="id"   type="hidden"  value="<?= $itens['id'] ?> " >
-                        <input class="login" type="text"  maxlength="25" name="nome"  placeholder="Nome " value="<?= $itens['nome'] ?> ">        
-                        <input class="login" type="text"  maxlength="25" name="CPF"  placeholder="CPF " value="<?= $itens['CPF'] ?> ">        
-                        <input class="login" type="text"  maxlength="25" name="numero"  placeholder="Numero " value="<?= $itens['numero'] ?> ">        
-                        <button action="editar.php" class="btnLogin" type="submit">Alterar</button>
+                        <input class="login" type="text"    name="nome"  placeholder="Filme" value="<?= $itens['nome'] ?> ">        
+                        <input class="login" type="text"    name="qtd"  placeholder="qtd" value="<?= $itens['qtd'] ?> ">        
+                        <input class="login" type="text"  name="disp" placeholder="disponivel" value="<?= $itens['disp'] ?> ">        
+                        <button  class="btnLogin" type="submit">Alterar</button>
                     </form>
                 </div>
             <?php endif;?>
@@ -63,20 +63,18 @@
     </div>
 </body>
 <?php       
-
-
     @$new_id  = $_POST["id"];
     @$new_nome  = $_POST["nome"];
-    @$new_numero = $_POST["numero"];
-    @$new_cpf  = $_POST["CPF"];
+    @$new_qtd = $_POST["qtd"];
+    @$new_disp  = $_POST["disp"];
 
-    $sql = "UPDATE clientes SET
+    $sql = "UPDATE titulos SET
         nome='" .$new_nome. "',
-        numero='" .$new_numero. "',
-        cpf='" .$new_cpf. "' 
+        qtd='" .$new_qtd. "',
+        disp='" .$new_disp. "' 
         WHERE id = $new_id  ";
 
     if (@$selecao = mysqli_query($mysqli, $sql) ) {
-        header("Location:cliente.php?msg=Cliente Alterado com sucesso!");
+        header("Location:titulo.php?msg=Titulo Alterado com sucesso!");
     }
 ?>

@@ -72,6 +72,8 @@ h4{
     align-items: center; 
 }
 a{
+    padding-top: 0.5vh ;
+    padding-bottom: 0.5vh;
     display: inline-flex;
     text-decoration: none;  
     color: #000;
@@ -192,6 +194,8 @@ tr{
 }
 td{
     border-bottom: 0.1vh solid #c6520e;
+    text-transform: uppercase;
+    
     padding-left: 0;
     margin-left: 0;
 }

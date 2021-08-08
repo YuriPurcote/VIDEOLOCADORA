@@ -10,13 +10,12 @@
     <link rel="stylesheet" href="css/estilosPrincipais.css">
     <title>O Senhor da Versão Extendida</title>
 </head>
-<!-- listagem -->
 <?php
   @$id= $_GET["id"] ;
   
-  $query = "SELECT * FROM clientes WHERE id = $id ";
+  $sql = "SELECT * FROM clientes WHERE id = $id ";
   
-  @$result = mysqli_query($mysqli,$query);
+  @$result = mysqli_query($mysqli,$sql);
 
 ?>
 <body>
@@ -50,12 +49,12 @@
             if(@$itens = mysqli_fetch_assoc($result)):
             ?>
                 <div class="campos">
-                    <form method="POST" >
+                    <form method="GET" action="deletar.php" >
                         <input id="id" name="id"   type="hidden"  value="<?= $itens['id'] ?> " >
                         <input class="login" type="text"  maxlength="25" name="nome"  placeholder="Nome " value="<?= $itens['nome'] ?> ">        
                         <input class="login" type="text"  maxlength="25" name="CPF"  placeholder="CPF " value="<?= $itens['CPF'] ?> ">        
                         <input class="login" type="text"  maxlength="25" name="numero"  placeholder="Numero " value="<?= $itens['numero'] ?> ">        
-                        <button action="editar.php" class="btnLogin" type="submit">Alterar</button>
+                        <button name="confirmaExcluir" class="btnLogin" type="submit">Deletar</button>
                     </form>
                 </div>
             <?php endif;?>
@@ -65,18 +64,11 @@
 <?php       
 
 
-    @$new_id  = $_POST["id"];
-    @$new_nome  = $_POST["nome"];
-    @$new_numero = $_POST["numero"];
-    @$new_cpf  = $_POST["CPF"];
 
-    $sql = "UPDATE clientes SET
-        nome='" .$new_nome. "',
-        numero='" .$new_numero. "',
-        cpf='" .$new_cpf. "' 
-        WHERE id = $new_id  ";
-
-    if (@$selecao = mysqli_query($mysqli, $sql) ) {
-        header("Location:cliente.php?msg=Cliente Alterado com sucesso!");
+    $sql = "DELETE FROM clientes WHERE id = $id ";
+    if (isset($_GET['confirmaExcluir'])) {
+        if (@$selecao = mysqli_query($mysqli, $sql) ) {
+            header("Location:cliente.php?msg=Cliente Alterado com sucesso!");
+        }
     }
 ?>
