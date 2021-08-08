@@ -39,7 +39,7 @@
         <a href="titulo.php" class="pesquisa bloco fonte">
             <h4>T</h4>itulo
         </a >
-        <a href="titulo.php" class="pesquisa bloco fonte">
+        <a href="alugados.php" class="pesquisa bloco fonte">
             <h4>A</h4>lugados
         </a >
         <a href="alugados.php" class="creditos bloco fonte areaFuncionario">
@@ -68,20 +68,20 @@
         <!---LISTAGEM DE DADOS---------------------------------------------------------------------------->
             <table>
                 <tr >
-                    <td class="td-id">
+                    <td >
                         ID
                     </td>
-                    <td class="td-nome">
-                        Nome
+                    <td >
+                        Titulo
                     </td>
-                    <td class="td-sexo">
-                        Cpf
+                    <td >
+                        Cliente
                     </td>
-                    <td class="td-idade">
-                        Numero
+                    <td >
+                        Retirada
                     </td>
-                    <td class="td-acao">
-                        Ação
+                    <td >
+                        Entrega
                     </td>
                 </tr>
                 <?php while($row = mysqli_fetch_assoc($lista)): ?>

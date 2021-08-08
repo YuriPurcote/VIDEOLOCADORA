@@ -24,7 +24,7 @@
         <a href="creditos.php" class="creditos bloco fonte">
             <h4>C</h4>reditos
         </a >
-        <a href="login.php" class="creditos bloco fonte areaFuncionario">
+        <a href="../login.php" class="creditos bloco fonte areaFuncionario">
             <h4>F</h4>uncionario
         </a >
 

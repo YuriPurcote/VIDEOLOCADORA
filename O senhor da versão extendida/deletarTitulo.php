@@ -22,7 +22,7 @@
     <div class="col-ghost"></div>
     <div class="col-menu">
         <div class="inicio">
-            <a href="inicio.php"><img src="imagens/logoGuia.png" alt=""></a>
+            <a href="Interface do Usuario/inicio.php"><img src="imagens/logoGuia.png" alt=""></a>
         </div>
         <a href="cliente.php" class="creditos bloco fonte">
             <h4>C</h4>liente
