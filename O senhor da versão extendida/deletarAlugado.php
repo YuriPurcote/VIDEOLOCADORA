@@ -68,7 +68,7 @@
     $sql = "DELETE FROM alugados WHERE id = $id ";
     if (isset($_GET['confirmaExcluir'])) {
         if (@$selecao = mysqli_query($mysqli, $sql) ) {
-            header("Location:alugados.php?msg=Cliente Alterado com sucesso!");
+            header("Location:alugados.php?msg=Pagamento Realizado!");
         }
     }
 ?>

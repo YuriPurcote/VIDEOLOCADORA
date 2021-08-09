@@ -56,8 +56,6 @@
                     <form method="POST" >
                         <input id="id" name="id"   type="hidden"  value="<?= $itens['id'] ?> " >
                         <input class="login" type="text"    name="nome"  placeholder="Filme" value="<?= $itens['nome'] ?> ">        
-                        <input class="login" type="text"    name="qtd"  placeholder="qtd" value="<?= $itens['qtd'] ?> ">        
-                        <input class="login" type="text"  name="disp" placeholder="disponivel" value="<?= $itens['disp'] ?> ">        
                         <button  class="btnLogin" type="submit">Alterar</button>
                     </form>
                 </div>
@@ -68,13 +66,9 @@
 <?php       
     @$new_id  = $_POST["id"];
     @$new_nome  = $_POST["nome"];
-    @$new_qtd = $_POST["qtd"];
-    @$new_disp  = $_POST["disp"];
 
     $sql = "UPDATE titulos SET
         nome='" .$new_nome. "',
-        qtd='" .$new_qtd. "',
-        disp='" .$new_disp. "' 
         WHERE id = $new_id  ";
 
     if (@$selecao = mysqli_query($mysqli, $sql) ) {

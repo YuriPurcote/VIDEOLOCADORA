@@ -112,7 +112,7 @@
                             <a id="today" class="fas fa-angle-down red" onclick="today()"></a>
                         </td>
                         <td class="">
-                            <div id="multa">valor da multa</div>
+                            <div id="multa"></div>
                         </td>
                         <td class="">
                             <a  class="fas fa-hand-holding-usd red" href="deletarAlugado.php?id=<?= $row['id'];?>" title="Pago" ></a>
@@ -127,20 +127,16 @@
         function today(){
             var dt = new Date().toISOString().slice(0, 10);
             var retirada = document.querySelector("#dataRetirada");
-
+            
             today =document.querySelector("#today") ;
             today.innerHTML =dt;
             /* transformando a data em int */
-
-            var mdy = dt.split('/');
-            return new Date(mdy[2], mdy[0]-1, mdy[1]);
-            var mdy1 = retirada.split('/');
-            return new Date(mdy1[2], mdy1[0]-1, mdy1[1]);
-
-            if (document.getElementById("#today")!=='') {
+            
+            if (dt!==retirada) {
+                var timeDiff = Math.abs(dt.getTime() - retirada.getTime());
+                alert(timeDiff);
+                var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24)); 
                 var diff =  Math.floor(( Date.parse(dt) - Date.parse(retirada) ) / 86400000); 
-                console.log(diff);
-                
                 if (diff =>2) {
                     var multa = document.querySelector("#multa");
                     multa.innerHTML=""+5*diff+"";

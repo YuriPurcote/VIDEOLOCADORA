@@ -55,8 +55,6 @@
                     <form method="GET" >
                         <input id="id" name="id"   type="hidden"  value="<?= $itens['id'] ?> " >
                         <input class="login" type="text"    name="nome"  placeholder="Filme" value="<?= $itens['nome'] ?> ">        
-                        <input class="login" type="text"    name="qtd"  placeholder="qtd" value="<?= $itens['qtd'] ?> ">        
-                        <input class="login" type="text"  name="disp" placeholder="disponivel" value="<?= $itens['disp'] ?> ">           
                         <button name="confirmaExcluir" class="btnLogin" type="submit">Deletar</button>
                     </form>
                 </div>

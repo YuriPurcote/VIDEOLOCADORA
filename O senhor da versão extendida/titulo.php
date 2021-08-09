@@ -61,7 +61,6 @@
             <form method="POST" action="acoes.php?acao=incluirTitulo">
                 <input class="login" type="text"    name="nome"  placeholder="Filme">        
                 <input class="login" type="text"    name="qtd"  placeholder="qtd">        
-                <input class="login" type="text"  name="disp" placeholder="disponivel">        
                 <button  class="btnLogin" type="submit">Incluir</button>
             </form>
         </div>
@@ -75,12 +74,6 @@
                         Filme
                     </td>
                     <td >
-                        Qtd Total
-                    </td>
-                    <td >
-                        Disp = qtd - qtd alugado 
-                    </td>
-                    <td >
                         Ação
                     </td>
                 </tr>
@@ -91,12 +84,6 @@
                         </td>
                         <td class="">
                             <?php echo $row['nome'];?>
-                        </td>
-                        <td class="">
-                            <?php echo $row['qtd'];?>
-                        </td>
-                        <td class="">
-                            <?php echo $row['disp'];?>
                         </td>
                         <td >
                             <a class="fas fa-pen-nib botao-acao-lista red" href="editarTitulo.php?id=<?= $row['id'];?>" title="Alterar"></a>
