@@ -81,8 +81,9 @@
             var retirada = document.getElementById("dataRetirada").value;
             var entrega = document.getElementById("today").value;
             var multa = document.querySelector("#multa");
-
-            const diffTime = Math.abs(entrega - retirada);
+            var a = parseInt(retirada);
+            var b = parseInt(entrega);
+            const diffTime = Math.abs(a - b);
             const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
 
             if (diffDays <=2) {
