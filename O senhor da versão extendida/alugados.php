@@ -13,10 +13,11 @@
     <link rel="stylesheet" href="css/estilosPrincipais.css">
     <title>O Senhor da Versão Extendida</title>
 </head>
+
 <!---CONEXAO COM O BANCO DE DADOS E LISTAGEM------------------------------------------------------>
 <?php
 
-    $sql = "SELECT * FROM clientes Order by id ";
+    $sql = "SELECT * FROM alugados Order by id ";
 
     $lista = mysqli_query($mysqli, $sql); 
 
@@ -49,19 +50,19 @@
 <!-- coluna de conteudos -->
     <div class="col-conteudo ">
         <div class="titulo">
-            Cliente
+            Alugados
         </div>
         <div class="subtitulo">
-            Cadastro de Clientes
+            Cadastro de Titulos retirados
         </div>
         <div class="subtitulo red">
             <?php  echo @$_GET["msg"] ?>
         </div>
         <div class="campos">
-            <form method="POST" action="acoes.php?acao=incluir">
-                <input class="login" type="text"    name="nome"  placeholder="Nome">        
-                <input class="login" type="text" maxlength="12"   name="cpf"  placeholder="Cpf">        
-                <input class="login" type="text"  name="numero" placeholder="Numero">        
+            <form method="POST" action="acoes.php?acao=incluirAlugado">
+                <input class="login" type="text"  name="titulo"  placeholder="Titulo">        
+                <input class="login" type="text"  name="cliente" placeholder="Cliente">        
+                <input class="login red" type="date"  name="retirada" placeholder="Retirada">        
                 <button  class="btnLogin" type="submit">Incluir</button>
             </form>
         </div>
@@ -83,24 +84,35 @@
                     <td >
                         Entrega
                     </td>
+                    <td >
+                        Multa
+                    </td>
+                    <td >
+                        Pago
+                    </td>
                 </tr>
                 <?php while($row = mysqli_fetch_assoc($lista)): ?>
                     <tr>
-                        <td class="" >
+                        <td class="">
                             <?php echo $row['id'];?>
                         </td>
                         <td class="">
-                            <?php echo $row['nome'];?>
+                            <?php echo $row['titulo'];?>
                         </td>
                         <td class="">
-                            <?php echo $row['CPF'];?>
+                            <?php echo $row['cliente'];?>
+                        </td>
+                        <td>
+                            <a class="fas fa-angle-up red" ><?php echo $row['retirada'];?></a>
                         </td>
                         <td class="">
-                            <?php echo $row['numero'];?>
+                            <a  class="fas fa-angle-down red" onclick="after()"  ></a>
                         </td>
-                        <td class="td-acao-corpo">
-                            <a class="fas fa-pen-nib botao-acao-lista red" href="editar.php?id=<?= $row['id'];?>" title="Alterar"></a>
-                            <a class="fas fa-eraser botao-acao-lista red" href="deletar.php?id=<?= $row['id'];?>" title="Apagar" ></a>
+                        <td class="">
+                            multa
+                        </td>
+                        <td class="">
+                            <a  class="fas fa-hand-holding-usd red" href="deletarAlugado.php?id=<?= $row['id'];?>" title="Pago" ></a>
                         </td>
                     </tr>
                 <?php endwhile; ?>  

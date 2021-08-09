@@ -39,10 +39,10 @@
         <a href="titulo.php" class="pesquisa bloco fonte">
             <h4>T</h4>itulo
         </a >
-        <a href="titulo.php" class="pesquisa bloco fonte">
+        <a href="alugados.php" class="pesquisa bloco fonte">
             <h4>A</h4>lugados
         </a >
-        <a href="alugados.php" class="creditos bloco fonte areaFuncionario">
+        <a href="cliente.php" class="creditos bloco fonte areaFuncionario">
             <h4>F</h4>uncionario
         </a >
     </div>

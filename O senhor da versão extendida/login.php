@@ -11,15 +11,16 @@
     <title>O Senhor da Versão Extendida</title>
 </head>
 <script language="JavaScript">
-    function login() {
+    function login(form) {
         var ID = document.getElementById("chave").value;
         var SENHA = document.getElementById("senha").value;
         if (ID ==''||SENHA =='',ID ==''&& SENHA =='' ) {
             alert('Olá o ID é 123 e a Senha 123 tambem');
-            return false;
         }
         if (ID =='123'&& SENHA =='123') {
-            document.form = "cliente.php";
+            <?php
+                header('Location:cliente.php');
+            ?>
         }
     }
 </script>
@@ -42,7 +43,7 @@
             não a necessidade de colocar quaisquer conteudo nos campos,apenas clicle em login
         </div>
         <div class="campos">
-            <form onsubmit=" return login()" >
+            <form onsubmit="login()" >
                 <label for="id">ID:</label>
                 <input class="login" type="text" id="chave" name="id"><br><br>
                 <label for="senha">Senha:</label>
