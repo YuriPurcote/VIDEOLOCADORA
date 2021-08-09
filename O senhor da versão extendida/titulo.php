@@ -60,7 +60,6 @@
         <div class="campos">
             <form method="POST" action="acoes.php?acao=incluirTitulo">
                 <input class="login" type="text"    name="nome"  placeholder="Filme">        
-                <input class="login" type="text"    name="qtd"  placeholder="qtd">        
                 <button  class="btnLogin" type="submit">Incluir</button>
             </form>
         </div>

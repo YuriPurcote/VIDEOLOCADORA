@@ -56,7 +56,7 @@
                     <form method="POST" >
                         <input id="id" name="id"   type="hidden"  value="<?= $itens['id'] ?> " >
                         <input class="login" type="text"    name="nome"  placeholder="Filme" value="<?= $itens['nome'] ?> ">        
-                        <button  class="btnLogin" type="submit">Alterar</button>
+                        <button action="editarTitulo.php" class="btnLogin" type="submit">Alterar</button>
                     </form>
                 </div>
             <?php endif;?>
@@ -68,9 +68,8 @@
     @$new_nome  = $_POST["nome"];
 
     $sql = "UPDATE titulos SET
-        nome='" .$new_nome. "',
+        nome='".$new_nome."'
         WHERE id = $new_id  ";
-
     if (@$selecao = mysqli_query($mysqli, $sql) ) {
         header("Location:titulo.php?msg=Titulo Alterado com sucesso!");
     }

@@ -42,25 +42,16 @@ $alugado = new Alugado();
         if($acao == 'incluirTitulo'){
 
             $nome = $titulo ->setNome($_POST['nome']);
-            $qtd = $titulo ->setQtd($_POST['qtd']);
-            $disp = $titulo ->setDisp($_POST['disp']);
-
 
             $nome = $titulo ->getNome($_POST['nome']);
-            $qtd = $titulo ->getQtd($_POST['qtd']);
-            $disp = $titulo ->getDisp($_POST['disp']);
             if ($nome == NULL&& $qtd == NULL) {
 
-                header("Location:cliente.php?msg=Favor preencher todos os campos");
+                header("Location:titulo.php?msg=Favor preencher todos os campos");
             }else{
                 $sql = "INSERT INTO titulos(
-                        nome,
-                        qtd,
-                        disp
+                        nome
                     )values(
-                        ' $nome ',
-                        ' $qtd  ',
-                        ' $disp '
+                        ' $nome'
                     )";
               
                 if (mysqli_query($mysqli, $sql)) {

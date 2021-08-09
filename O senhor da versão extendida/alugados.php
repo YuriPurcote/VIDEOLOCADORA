@@ -87,12 +87,6 @@
                     <td >
                         Entrega
                     </td>
-                    <td >
-                        Calculo
-                    </td>
-                    <td >
-                        Multa
-                    </td>
                 </tr>
                 <?php while($row = mysqli_fetch_assoc($lista)): ?>
                     <tr>
@@ -109,43 +103,13 @@
                             <?php echo $row['retirada'];?>
                         </td>
                         <td class="">
-                            <a id="today" class="fas fa-angle-down red" onclick="today()"></a>
-                        </td>
-                        <td class="">
-                            <div id="multa"></div>
-                        </td>
-                        <td class="">
-                            <a  class="fas fa-hand-holding-usd red" href="deletarAlugado.php?id=<?= $row['id'];?>" title="Pago" ></a>
+                            <a  class="fas fa-hand-holding-usd red" href="deletarAlugado.php?id=<?= $row['id'];?>" title="Pagamento" ></a>
                         </td>
                     </tr>
                 <?php endwhile; ?>  
             </table>
         </div>
     </div>
-    <script>
-        /* logica  pegar o valor de retirada(V) e o valor do hoje que é quando é clicado no botao(V) então o valor da data de retirada menos o valor de entrega */
-        function today(){
-            var dt = new Date().toISOString().slice(0, 10);
-            var retirada = document.querySelector("#dataRetirada");
-            
-            today =document.querySelector("#today") ;
-            today.innerHTML =dt;
-            /* transformando a data em int */
-            
-            if (dt!==retirada) {
-                var timeDiff = Math.abs(dt.getTime() - retirada.getTime());
-                alert(timeDiff);
-                var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24)); 
-                var diff =  Math.floor(( Date.parse(dt) - Date.parse(retirada) ) / 86400000); 
-                if (diff =>2) {
-                    var multa = document.querySelector("#multa");
-                    multa.innerHTML=""+5*diff+"";
-                }else{
-                    multa.innerHTML ="Sem Multa";
-                }
-            }
-        }
-
-    </script>
+   
 </body>
 </html>
