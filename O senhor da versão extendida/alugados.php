@@ -11,6 +11,9 @@
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <!-- estilo da pagina -->
     <link rel="stylesheet" href="css/estilosPrincipais.css">
+    <!-- momnet JS -->
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.18.1/moment.min.js"></script>
+
     <title>O Senhor da Versão Extendida</title>
 </head>
 
@@ -59,9 +62,6 @@
             <?php  echo @$_GET["msg"] ?>
         </div>
         <div class="campos">
-            <div class="subtitulo">
-                Até 2 dias uteis para retorno de todos os titulos
-            </div>
             <form method="POST" action="acoes.php?acao=incluirAlugado">
                 <input class="login" type="text"  name="titulo"  placeholder="Titulo">        
                 <input class="login" type="text"  name="cliente" placeholder="Cliente">        
@@ -105,17 +105,17 @@
                         <td class="">
                             <?php echo $row['cliente'];?>
                         </td>
-                        <td class="">
+                        <td id="dataRetirada">
                             <?php echo $row['retirada'];?>
                         </td>
                         <td class="">
-                            <a id="today" onclick="today()">V</a>
+                            <a id="today" class="fas fa-angle-down red" onclick="today()"></a>
+                        </td>
+                        <td class="">
+                            <div id="multa">valor da multa</div>
                         </td>
                         <td class="">
                             <a  class="fas fa-hand-holding-usd red" href="deletarAlugado.php?id=<?= $row['id'];?>" title="Pago" ></a>
-                        </td>
-                        <td class="">
-                            <div>valor da multa</div>
                         </td>
                     </tr>
                 <?php endwhile; ?>  
@@ -123,18 +123,31 @@
         </div>
     </div>
     <script>
-        /* logica  pegar o valor de retirada e o valor do hoje que é quando é clicado no botao então o valor da data de retirada menos o valor de entrega */
-         function today(){
-            var dt = new Date();
-            var dia = dt.getDate();
-            var mes = dt.getMonth();
-            var ano = dt.getFullYear();
+        /* logica  pegar o valor de retirada(V) e o valor do hoje que é quando é clicado no botao(V) então o valor da data de retirada menos o valor de entrega */
+        function today(){
+            var dt = new Date().toISOString().slice(0, 10);
+            var retirada = document.querySelector("#dataRetirada");
 
-            alert($dt);
-            $today =document.getElementById("today") ;
-            $today.textContent=$dt;
+            today =document.querySelector("#today") ;
+            today.innerHTML =dt;
+            /* transformando a data em int */
 
-            
+            var mdy = dt.split('/');
+            return new Date(mdy[2], mdy[0]-1, mdy[1]);
+            var mdy1 = retirada.split('/');
+            return new Date(mdy1[2], mdy1[0]-1, mdy1[1]);
+
+            if (document.getElementById("#today")!=='') {
+                var diff =  Math.floor(( Date.parse(dt) - Date.parse(retirada) ) / 86400000); 
+                console.log(diff);
+                
+                if (diff =>2) {
+                    var multa = document.querySelector("#multa");
+                    multa.innerHTML=""+5*diff+"";
+                }else{
+                    multa.innerHTML ="Sem Multa";
+                }
+            }
         }
 
     </script>

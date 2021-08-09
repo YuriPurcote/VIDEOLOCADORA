@@ -39,10 +39,10 @@
     </div>
     <div class="col-conteudo ">
         <div class="titulo">
-            Cliente
+            Pagamento
         </div>
         <div class="subtitulo">
-            Cadastro de Clientes
+            Realização do Pagamento
         </div>
         <div class="subtitulo red">
             <?php  echo @$_GET["msg"] ?>
@@ -52,15 +52,11 @@
             if(@$itens = mysqli_fetch_assoc($result)):
             ?>
                 <div class="campos">
-                    <form method="POST" >
+                    <form method="get" >
                         <input id="id" name="id"   type="hidden"  value="<?= $itens['id'] ?> " >
                         <input class="login" type="text"  maxlength="25" name="titulo"  placeholder="titulo " value="<?= $itens['titulo'] ?> ">        
                         <input class="login" type="text"  maxlength="25" name="cliente"  placeholder="CPF " value="<?= $itens['cliente'] ?> ">  
-                        <span class="subtitulo">Data da entrega</span>      
-                        <input class="login" type="date"  maxlength="25" id="data" name="data"  placeholder="Data da Entrega " >        
-                        <button name="confirmaExcluir" class="btnLogin" type="submit">Calcular</button>
-                        <br>
-                        <span class="red">Multa de  </span>
+                        <button name="confirmaExcluir" class="btnLogin" type="submit">Pago</button>
                     </form>
                 </div>
             <?php endif;?>
@@ -68,12 +64,6 @@
     </div>
 </body>
 <?php       
-    $retirada=$itens['retirada'];
-    @$data = $_GET['data'];
-    print_r($data);
-    exit;
-    
-
 
     $sql = "DELETE FROM alugados WHERE id = $id ";
     if (isset($_GET['confirmaExcluir'])) {

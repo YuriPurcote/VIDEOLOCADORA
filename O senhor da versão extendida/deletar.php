@@ -66,8 +66,6 @@
 </body>
 <?php       
 
-
-
     $sql = "DELETE FROM clientes WHERE id = $id ";
     if (isset($_GET['confirmaExcluir'])) {
         if (@$selecao = mysqli_query($mysqli, $sql) ) {
