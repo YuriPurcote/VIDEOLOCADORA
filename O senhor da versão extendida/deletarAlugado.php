@@ -8,6 +8,8 @@
     <link rel="shortcut icon" href="imagens/logoGuia.png" type="image/x-icon">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.3.1/css/all.css" integrity="sha384-mzrmE5qonljUremFsqc01SB46JvROS7bZs3IO2EmfFsd15uHvIt+Y8vEf7N7fWAU" crossorigin="anonymous">
     <link rel="stylesheet" href="css/estilosPrincipais.css">
+    <script type="text/javascript" src="http://services.iperfect.net/js/IP_generalLib.js"></script>
+
     <title>O Senhor da Versão Extendida</title>
 </head>
 <?php
@@ -56,9 +58,10 @@
                         <input id="id" name="id"   type="hidden"  value="<?= $itens['id'] ?> " >
                         <input class="login" type="text"  maxlength="25" name="titulo"  placeholder="titulo " value="<?= $itens['titulo'] ?> "disabled style="width:70vh  ">    
                         <input class="login" type="text"  maxlength="25" name="cliente"  placeholder="CPF " value="<?= $itens['cliente'] ?> "disabled>  
-                        <input class="login" type="text"  maxlength="25" name="cliente"  placeholder="CPF " value="<?= $itens['retirada'] ?> "disabled>       
+                        <input class="login" type="text" id="dataRetirada"  maxlength="25" name="cliente"  placeholder="CPF " value="<?= $itens['retirada'] ?> "disabled>       
                         <a id="today" class="fas fa-angle-down red" onclick="today()">Hoje</a>
                         <a style="margin-left: 39vh;" class="login" id="multa"> </a>
+                        <button onclick="calcular()" class="btnLogin" type="submit">Calcular</button>
                         <button name="confirmaExcluir" class="btnLogin" type="submit">Pago</button>
 
                     </form>
@@ -70,22 +73,22 @@
         /* logica  pegar o valor de retirada(V) e o valor do hoje que é quando é clicado no botao(V) então o valor da data de retirada menos o valor de entrega */
         function today(){
             var dt = new Date().toISOString().slice(0, 10);
-            var retirada = document.querySelector("#dataRetirada");
-            
+            var retirada = document.getElementById("dataRetirada").value;
             today =document.querySelector("#today") ;
             today.innerHTML =dt;
-
-            var timeDiff = Math.abs(dt.getTime() - retirada.getTime());
-            alert(timeDiff);
-            var diffDays = Math.ceil(timeDiff / (1000 * 3600 * 24)); 
-            var diff =  Math.floor(( Date.parse(dt) - Date.parse(retirada) ) / 86400000); 
-            if (diff =>2) {
+        }
+        function calcular() {
+            var retirada = document.getElementById("dataRetirada").value;
+            var entrega = document.getElementById("today").value;
+            
+            var days = retirada-entrega;
+            // if (days <2) {
                 var multa = document.querySelector("#multa");
                 multa.innerHTML=""+5*diff+"";
-            }else{
+            // }else{
                 multa.innerHTML ="Sem Multa";
-            }
-            }
+            // }
+        }
 
     </script>
 </body>
