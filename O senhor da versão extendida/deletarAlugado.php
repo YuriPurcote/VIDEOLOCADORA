@@ -52,34 +52,27 @@
             if(@$itens = mysqli_fetch_assoc($result)):
             ?>
                 <div class="campos">
-                    <form method="GET" id="pagamento" >
+                    <form method="POST" >
                         <input id="id" name="id"   type="hidden"  value="<?= $itens['id'] ?> " >
                         <input class="login" type="text"  maxlength="25" name="titulo"  placeholder="titulo " value="<?= $itens['titulo'] ?> ">        
-                        <input class="login" type="text"  maxlength="25" name="cliente"  placeholder="CPF " value="<?= $itens['cliente'] ?> ">        
-                        <input class="login" type="date"  maxlength="25" id="data"  placeholder="Data da Entrega " >        
+                        <input class="login" type="text"  maxlength="25" name="cliente"  placeholder="CPF " value="<?= $itens['cliente'] ?> ">  
+                        <span class="subtitulo">Data da entrega</span>      
+                        <input class="login" type="date"  maxlength="25" id="data" name="data"  placeholder="Data da Entrega " >        
                         <button name="confirmaExcluir" class="btnLogin" type="submit">Calcular</button>
                         <br>
                         <span class="red">Multa de  </span>
                     </form>
-                    <script>
-                        var form = document.getElementById('pagamento');
-                        var campo = document.getElementById('data');
-
-                        form.addEventListener('submit', function(e) {
-                            // alerta o valor do campo
-                            alert(campo.value);
-
-                            // impede o envio do form
-                            e.preventDefault();
-                        });
-                    </script>
                 </div>
             <?php endif;?>
         </div>
     </div>
 </body>
 <?php       
-
+    $retirada=$itens['retirada'];
+    @$data = $_GET['data'];
+    print_r($data);
+    exit;
+    
 
 
     $sql = "DELETE FROM alugados WHERE id = $id ";

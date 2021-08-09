@@ -59,6 +59,9 @@
             <?php  echo @$_GET["msg"] ?>
         </div>
         <div class="campos">
+            <div class="subtitulo">
+                Até 2 dias uteis para retorno de todos os titulos
+            </div>
             <form method="POST" action="acoes.php?acao=incluirAlugado">
                 <input class="login" type="text"  name="titulo"  placeholder="Titulo">        
                 <input class="login" type="text"  name="cliente" placeholder="Cliente">        
@@ -85,10 +88,10 @@
                         Entrega
                     </td>
                     <td >
-                        Multa
+                        Calculo
                     </td>
                     <td >
-                        Pago
+                        Multa
                     </td>
                 </tr>
                 <?php while($row = mysqli_fetch_assoc($lista)): ?>
@@ -102,22 +105,38 @@
                         <td class="">
                             <?php echo $row['cliente'];?>
                         </td>
-                        <td>
-                            <a class="fas fa-angle-up red" ><?php echo $row['retirada'];?></a>
+                        <td class="">
+                            <?php echo $row['retirada'];?>
                         </td>
                         <td class="">
-                            <a  class="fas fa-angle-down red" onclick="after()"  ></a>
-                        </td>
-                        <td class="">
-                            multa
+                            <a id="today" onclick="today()">V</a>
                         </td>
                         <td class="">
                             <a  class="fas fa-hand-holding-usd red" href="deletarAlugado.php?id=<?= $row['id'];?>" title="Pago" ></a>
+                        </td>
+                        <td class="">
+                            <div>valor da multa</div>
                         </td>
                     </tr>
                 <?php endwhile; ?>  
             </table>
         </div>
     </div>
+    <script>
+        /* logica  pegar o valor de retirada e o valor do hoje que é quando é clicado no botao então o valor da data de retirada menos o valor de entrega */
+         function today(){
+            var dt = new Date();
+            var dia = dt.getDate();
+            var mes = dt.getMonth();
+            var ano = dt.getFullYear();
+
+            alert($dt);
+            $today =document.getElementById("today") ;
+            $today.textContent=$dt;
+
+            
+        }
+
+    </script>
 </body>
 </html>
