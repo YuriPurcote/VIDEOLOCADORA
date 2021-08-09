@@ -2,3 +2,11 @@
 CRIAÇÃO DA TABELA CLIENTE
 
 CREATE TABLE `videolocadora`.`clientes` ( `id` INT NULL AUTO_INCREMENT , `nome` VARCHAR(25) NOT NULL , `numero` VARCHAR(70) NOT NULL , `CPF` VARCHAR(70) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+
+TABELA DE ALUGADOS 
+
+CREATE TABLE `videolocadora`.`alugados` ( `id` INT NULL AUTO_INCREMENT , `titulo` VARCHAR(200) NOT NULL , `cliente` VARCHAR(200) NOT NULL , `retirada` VARCHAR(11) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;
+
+TABELA DE TITULO 
+
+CREATE TABLE `videolocadora`.`titulos` ( `id` INT NULL AUTO_INCREMENT , `nome` VARCHAR(200) NOT NULL , PRIMARY KEY (`id`)) ENGINE = InnoDB;

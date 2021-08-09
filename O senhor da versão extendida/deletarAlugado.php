@@ -80,14 +80,16 @@
         function calcular() {
             var retirada = document.getElementById("dataRetirada").value;
             var entrega = document.getElementById("today").value;
-            
-            var days = retirada-entrega;
-            // if (days <2) {
-                var multa = document.querySelector("#multa");
-                multa.innerHTML=""+5*diff+"";
-            // }else{
+            var multa = document.querySelector("#multa");
+
+            const diffTime = Math.abs(entrega - retirada);
+            const diffDays = Math.ceil(diffTime / (1000 * 60 * 60 * 24)); 
+
+            if (diffDays <=2) {
+                multa.innerHTML="R$"+5*diffDays+"";
+            }else{
                 multa.innerHTML ="Sem Multa";
-            // }
+            }
         }
 
     </script>
